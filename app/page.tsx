@@ -1,30 +1,56 @@
 import Image from "next/image";
+import Link from "next/link";
 
 const experiences = [
   {
     number: "01",
-    title: "Horseback Riding",
+    title: "Horseback Riding in Tuscany",
     description:
       "Discover the Tuscan countryside from the saddle, surrounded by the landscape near Montepulciano.",
-    featured: true,
+    image: "/images/horseback-sunset-tuscany.jpg",
+    imageAlt: "A group riding horses through the Tuscan countryside at sunset",
   },
   {
     number: "02",
-    title: "Farm Animal Experience",
-    description: "A closer encounter with rural life and the animals of Cognanello.",
-    featured: false,
+    title: "Farm Animal Visit, Ricotta Making & Tasting",
+    description: "Meet the farm animals and discover a traditional part of rural life.",
+    image: "/images/farm-animal-visit-ricotta-making-tasting.jpg",
+    imageAlt: "Children visiting the animals at our farm in Tuscany",
   },
   {
     number: "03",
-    title: "Pony Experience for Kids",
-    description: "A gentle introduction to ponies for younger guests.",
-    featured: false,
+    title: "Pici Cooking Class & Dinner",
+    description: "Prepare a Tuscan pasta tradition and share dinner at our farm.",
+    image: "/images/pici-cooking-class-dinner.jpg",
+    imageAlt: "Freshly prepared pici pasta in a Tuscan kitchen",
   },
   {
     number: "04",
+    title: "Farm Visit & First Saddle Experience",
+    description: "An introduction to the farm and a first experience in the saddle.",
+    image: "/images/farm-visit-first-saddle-experience.jpg",
+    imageAlt: "Children with donkeys during an experience at our farm in Tuscany",
+  },
+  {
+    number: "05",
+    title: "Horse-Drawn Carriage Ride in Montepulciano",
+    description: "See Montepulciano from the considered pace of a horse-drawn carriage.",
+    image: "/images/horse-drawn-carriage-ride-montepulciano.jpg",
+    imageAlt: "Horse-drawn carriage travelling through the countryside near Montepulciano",
+  },
+  {
+    number: "06",
     title: "Traditional Ox Cart Ride",
-    description: "Experience the countryside through a traditional form of rural travel.",
-    featured: false,
+    description: "Encounter the countryside through a traditional form of rural travel.",
+    image: "/images/traditional-ox-cart-ride.jpg",
+    imageAlt: "Traditional ox cart travelling through the Tuscan countryside",
+  },
+  {
+    number: "07",
+    title: "Walk with Goats or Donkeys",
+    description: "Walk through the rural surroundings in the company of farm animals.",
+    image: "/images/walk-with-goats-or-donkeys.jpg",
+    imageAlt: "Guests walking with goats through the countryside",
   },
 ];
 
@@ -177,58 +203,81 @@ export default function Home() {
           <div className="mx-auto max-w-6xl">
             <div className="grid gap-8 border-b border-[#cbc6b8] pb-12 lg:grid-cols-[0.8fr_1.5fr] lg:gap-24">
               <p className="text-xs font-semibold uppercase tracking-[0.25em] text-[#77705e]">
-                At Cognanello
+                At Tuscany Horse Trekking
               </p>
               <div>
                 <h2 className="font-serif text-4xl leading-tight tracking-[-0.025em] sm:text-6xl">
                   Our Experiences
                 </h2>
                 <p className="mt-6 max-w-2xl leading-7 text-[#62675e]">
-                  Discover horseback riding and other ways to connect with the rural life
-                  and equestrian character of Cognanello.
+                  Discover horseback riding and other ways to experience rural life and
+                  the equestrian traditions of Tuscany.
                 </p>
               </div>
             </div>
 
-            <div className="grid gap-x-12 lg:grid-cols-[1.15fr_0.85fr]">
-              {experiences.map((experience) => (
+            <article className="grid gap-8 border-b border-[#cbc6b8] py-12 sm:py-16 lg:grid-cols-[1.2fr_0.8fr] lg:gap-16">
+              <figure className="relative aspect-[4/5] overflow-hidden bg-[#b7b49f] sm:aspect-[16/10] lg:aspect-[4/3]">
+                <Image
+                  alt="A group riding horses through the Tuscan countryside at sunset"
+                  className="object-cover object-center"
+                  fill
+                  sizes="(min-width: 1024px) 58vw, (min-width: 640px) 90vw, 100vw"
+                  src="/images/horseback-sunset-tuscany.jpg"
+                />
+              </figure>
+              <div className="flex flex-col justify-end pb-1">
+                <span className="font-serif text-sm italic text-[#8a8068]">
+                  {experiences[0].number}
+                </span>
+                <h3 className="mt-6 max-w-lg font-serif text-4xl leading-[1.08] tracking-[-0.02em] sm:text-5xl">
+                  {experiences[0].title}
+                </h3>
+                <p className="mt-5 max-w-md text-base leading-8 text-[#62675e]">
+                  {experiences[0].description}
+                </p>
+                <Link
+                  className="mt-8 inline-flex w-fit items-center gap-3 text-xs font-semibold uppercase tracking-[0.17em] text-[#263126]"
+                  href="/experiences/horseback-riding"
+                >
+                  Discover <ArrowIcon />
+                </Link>
+              </div>
+            </article>
+
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3">
+              {experiences.slice(1).map((experience, index) => (
                 <article
-                  className={
-                    experience.featured
-                      ? "border-b border-[#cbc6b8] py-12 lg:row-span-3 lg:border-b-0 lg:border-r lg:py-16 lg:pr-16"
-                      : "border-b border-[#cbc6b8] py-8 last:border-b-0 lg:py-10"
-                  }
+                  className={`flex min-h-80 flex-col border-b border-[#cbc6b8] py-9 sm:min-h-96 sm:px-7 sm:py-10 sm:odd:border-r lg:min-h-[26rem] lg:border-r lg:px-8 ${
+                    index % 3 === 2 ? "lg:border-r-0" : ""
+                  }`}
                   key={experience.title}
                 >
+                  <figure className="relative mb-8 aspect-[16/7] overflow-hidden bg-[#e5e1d6]">
+                    <Image
+                      alt={experience.imageAlt}
+                      className="object-cover object-center"
+                      fill
+                      sizes="(min-width: 1024px) 22vw, (min-width: 640px) 42vw, 100vw"
+                      src={experience.image}
+                    />
+                  </figure>
                   <span className="font-serif text-sm italic text-[#8a8068]">
                     {experience.number}
                   </span>
-                  <h3
-                    className={
-                      experience.featured
-                        ? "mt-7 max-w-md font-serif text-4xl leading-tight sm:text-5xl"
-                        : "mt-4 font-serif text-2xl leading-tight"
-                    }
-                  >
+                  <h3 className="mt-4 font-serif text-2xl leading-tight">
                     {experience.title}
                   </h3>
-                  <p
-                    className={`mt-4 text-[#62675e] ${
-                      experience.featured
-                        ? "max-w-lg text-base leading-8"
-                        : "max-w-md text-sm leading-7"
-                    }`}
-                  >
+                  <p className="mt-4 text-sm leading-7 text-[#62675e]">
                     {experience.description}
                   </p>
-                  {experience.featured ? (
-                    <a
-                      className="mt-8 inline-flex items-center gap-3 text-xs font-semibold tracking-[0.17em] text-[#263126]"
-                      href="#booking"
-                    >
-                      BOOK NOW <ArrowIcon />
-                    </a>
-                  ) : null}
+                  <a
+                    aria-label={`Discover ${experience.title}`}
+                    className="mt-auto inline-flex w-fit items-center gap-3 pt-7 text-xs font-semibold uppercase tracking-[0.17em] text-[#263126]"
+                    href="#contact"
+                  >
+                    Discover <ArrowIcon />
+                  </a>
                 </article>
               ))}
             </div>

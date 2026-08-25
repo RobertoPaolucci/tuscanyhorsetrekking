@@ -21,7 +21,7 @@ This block is written and re-added by `next dev` — verify at `node_modules/nex
 - Initial primary language: English.
 - Primary domain: `tuscanyhorsetrekking.it`.
 - `tuscanyhorsetrekking.com` will be used as a secondary domain or redirect.
-- The site promotes and sells rural and equestrian experiences at Agriturismo Cognanello: Horseback Riding, Farm Animal Experience, Pony Experience for Kids, and Traditional Ox Cart Ride.
+- The site promotes and sells seven rural and equestrian experiences at Tuscany Horse Trekking: Horseback Riding in Tuscany; Farm Animal Visit, Ricotta Making & Tasting; Pici Cooking Class & Dinner; Farm Visit & First Saddle Experience; Horse-Drawn Carriage Ride in Montepulciano; Traditional Ox Cart Ride; and Walk with Goats or Donkeys.
 - Horseback Riding is the primary activity and must remain the main focus of the homepage.
 - Bookings will be managed through Bókun.
 - Payments may be managed through the TodoInTheWorld Limited / Stripe commercial system.
@@ -54,6 +54,7 @@ This block is written and re-added by `next dev` — verify at `node_modules/nex
 20. If a command fails, clearly describe the error without attempting unrequested invasive changes.
 21. Before every important change, briefly explain what will be modified.
 22. At completion, summarize the modified files and the checks performed.
+23. The word "Cognanello" must never appear in public-facing content, including visible copy, titles, descriptions, metadata, alt text, CTAs, footers, homepage content, or experience pages. Use context-appropriate alternatives such as "Tuscany Horse Trekking", "our farm", "the farm", "the Tuscan countryside", "near Montepulciano", or "Tuscany".
 
 ## Git rules
 
