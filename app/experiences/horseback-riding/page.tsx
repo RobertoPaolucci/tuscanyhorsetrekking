@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import BokunExperienceWidget from "@/components/BokunExperienceWidget";
+import SiteFooter from "@/components/SiteFooter";
 
 export const metadata: Metadata = {
   title: "Horseback Riding in Tuscany | Tuscany Horse Trekking",
@@ -216,15 +217,21 @@ export default function HorsebackRidingPage() {
                   }`}
                   key={experience.title}
                 >
-                  <figure className="relative mb-8 aspect-[16/9] overflow-hidden bg-[#e5e1d6]">
-                    <Image
-                      alt={experience.imageAlt}
-                      className="object-cover object-center"
-                      fill
-                      sizes="(min-width: 1024px) 22vw, (min-width: 640px) 42vw, 100vw"
-                      src={experience.image}
-                    />
-                  </figure>
+                  <Link
+                    aria-label={`Discover ${experience.title}`}
+                    className="block"
+                    href={experience.href}
+                  >
+                    <figure className="relative mb-8 aspect-[16/9] overflow-hidden bg-[#e5e1d6]">
+                      <Image
+                        alt={experience.imageAlt}
+                        className="object-cover object-center"
+                        fill
+                        sizes="(min-width: 1024px) 22vw, (min-width: 640px) 42vw, 100vw"
+                        src={experience.image}
+                      />
+                    </figure>
+                  </Link>
                   <h3 className="font-serif text-2xl leading-tight">{experience.title}</h3>
                   <Link
                     aria-label={`Discover ${experience.title}`}
@@ -240,28 +247,7 @@ export default function HorsebackRidingPage() {
         </section>
       </main>
 
-      <footer className="bg-[#1c241d] px-5 py-12 text-white/70 sm:px-8 lg:px-12" id="contact">
-        <div className="mx-auto flex max-w-6xl flex-col gap-10 border-t border-white/15 pt-10 sm:flex-row sm:items-end sm:justify-between">
-          <div>
-            <p className="font-serif text-xl text-white">Tuscany Horse Trekking</p>
-            <p className="mt-2 text-sm">Tuscany, Italy</p>
-          </div>
-          <nav
-            aria-label="Footer navigation"
-            className="flex flex-wrap gap-x-7 gap-y-3 text-xs uppercase tracking-[0.14em]"
-          >
-            <a className="transition-colors hover:text-white" href="#privacy">
-              Privacy
-            </a>
-            <a className="transition-colors hover:text-white" href="#terms">
-              Terms
-            </a>
-            <a className="transition-colors hover:text-white" href="#contact">
-              Contact
-            </a>
-          </nav>
-        </div>
-      </footer>
+      <SiteFooter />
     </div>
   );
 }

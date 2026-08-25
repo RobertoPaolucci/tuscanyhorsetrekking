@@ -1,5 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
+import ContactForm from "@/components/ContactForm";
+import SiteFooter from "@/components/SiteFooter";
 
 const experiences = [
   {
@@ -59,6 +61,79 @@ const navItems = [
   { label: "About", href: "#about" },
   { label: "FAQ", href: "#faq" },
   { label: "Contact", href: "#contact" },
+];
+
+const faqs = [
+  {
+    question: "Where are the experiences located?",
+    answer:
+      "Our experiences take place in the Tuscan countryside near Montepulciano. The exact meeting point and practical directions are provided with your booking confirmation.",
+  },
+  {
+    question: "How can I book an experience?",
+    answer:
+      "You can book directly online from the page of each experience. Availability and current prices are shown in the booking system.",
+  },
+  {
+    question: "Who manages my booking?",
+    answer:
+      "Bookings and customer service through Tuscany Horse Trekking are managed by TodoInTheWorld Limited, Ireland. Individual experiences may be delivered by selected local activity providers.",
+  },
+  {
+    question: "Do I need previous horse riding experience?",
+    answer:
+      "No specific level of riding experience is required in advance. At the beginning of the experience, the guide assesses each participant’s riding ability, confidence and control, and assigns the most suitable horse and position within the group. The guide also decides how the ride should be organised, including pace and level of independence, according to the riders, the horses and the conditions on the day. For safety and animal welfare, the guide’s instructions and decisions must always be followed.",
+  },
+  {
+    question: "Who decides which horse I will ride?",
+    answer:
+      "The guide assigns each horse after assessing the rider’s experience, confidence, physical characteristics and the group as a whole. Horse assignment cannot be guaranteed in advance, as the priority is always a safe and appropriate match between rider and horse.",
+  },
+  {
+    question: "Can experienced riders ride faster?",
+    answer:
+      "The pace of the ride is decided by the guide according to the ability of the participants, the horses, trail conditions and safety considerations. Previous riding experience does not automatically guarantee a faster pace or independent riding.",
+  },
+  {
+    question: "Can children take part?",
+    answer:
+      "Some experiences are designed specifically for families and children, while others may have age or participation requirements. Please check the booking information for the experience you are interested in.",
+  },
+  {
+    question: "What should I wear?",
+    answer:
+      "For outdoor and animal experiences, we recommend comfortable clothing and closed-toe shoes suitable for the countryside. Any specific requirements are shown during the booking process.",
+  },
+  {
+    question: "What happens if the weather is bad?",
+    answer:
+      "Outdoor experiences may be affected by weather, trail conditions, safety considerations or animal welfare. If an experience needs to be changed, postponed or cancelled, you will be contacted with the available options.",
+  },
+  {
+    question: "Are the animals well cared for?",
+    answer:
+      "Animal welfare is an essential part of our experiences. Activities are organised with respect for the animals, their wellbeing and the conditions of the day.",
+  },
+  {
+    question: "Can I cancel or change my booking?",
+    answer:
+      "Cancellation and amendment conditions may vary depending on the experience. The applicable conditions are displayed during the booking process and in your booking confirmation.",
+  },
+  {
+    question: "Can I contact you before booking?",
+    answer:
+      "Yes. If you have questions about an experience, use the contact form on this website and our customer service team will assist you.",
+  },
+  {
+    question: "Can I book for a group or family?",
+    answer:
+      "Group capacity varies depending on the experience and availability. Enter the number of participants in the booking system to see the available options.",
+  },
+  {
+    question: "Are prices the same as on other booking websites?",
+    answer:
+      "Prices shown on Tuscany Horse Trekking are the prices available for direct bookings through this website and may differ from prices offered through other sales channels.",
+  },
 ];
 
 function ArrowIcon() {
@@ -217,15 +292,20 @@ export default function Home() {
             </div>
 
             <article className="grid gap-8 border-b border-[#cbc6b8] py-12 sm:py-16 lg:grid-cols-[1.2fr_0.8fr] lg:gap-16">
-              <figure className="relative aspect-[4/5] overflow-hidden bg-[#b7b49f] sm:aspect-[16/10] lg:aspect-[4/3]">
-                <Image
-                  alt="A group riding horses through the Tuscan countryside at sunset"
-                  className="object-cover object-center"
-                  fill
-                  sizes="(min-width: 1024px) 58vw, (min-width: 640px) 90vw, 100vw"
-                  src="/images/horseback-sunset-tuscany.jpg"
-                />
-              </figure>
+              <Link
+                aria-label="Discover Horseback Riding in Tuscany"
+                href="/experiences/horseback-riding"
+              >
+                <figure className="relative aspect-[4/5] overflow-hidden bg-[#b7b49f] sm:aspect-[16/10] lg:aspect-[4/3]">
+                  <Image
+                    alt="A group riding horses through the Tuscan countryside at sunset"
+                    className="object-cover object-center"
+                    fill
+                    sizes="(min-width: 1024px) 58vw, (min-width: 640px) 90vw, 100vw"
+                    src="/images/horseback-sunset-tuscany.jpg"
+                  />
+                </figure>
+              </Link>
               <div className="flex flex-col justify-end pb-1">
                 <span className="font-serif text-sm italic text-[#8a8068]">
                   {experiences[0].number}
@@ -253,15 +333,25 @@ export default function Home() {
                   }`}
                   key={experience.title}
                 >
-                  <figure className="relative mb-8 aspect-[16/7] overflow-hidden bg-[#e5e1d6]">
-                    <Image
-                      alt={experience.imageAlt}
-                      className="object-cover object-center"
-                      fill
-                      sizes="(min-width: 1024px) 22vw, (min-width: 640px) 42vw, 100vw"
-                      src={experience.image}
-                    />
-                  </figure>
+                  <Link
+                    aria-label={`Discover ${experience.title}`}
+                    className="block"
+                    href={
+                      experience.title === "Walk with Goats or Donkeys"
+                        ? "/experiences/walk-with-goats-or-donkeys"
+                        : "#contact"
+                    }
+                  >
+                    <figure className="relative mb-8 aspect-[16/7] overflow-hidden bg-[#e5e1d6]">
+                      <Image
+                        alt={experience.imageAlt}
+                        className="object-cover object-center"
+                        fill
+                        sizes="(min-width: 1024px) 22vw, (min-width: 640px) 42vw, 100vw"
+                        src={experience.image}
+                      />
+                    </figure>
+                  </Link>
                   <span className="font-serif text-sm italic text-[#8a8068]">
                     {experience.number}
                   </span>
@@ -325,7 +415,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="bg-[#263126] px-5 py-24 text-center text-white sm:px-8 sm:py-32" id="faq">
+        <section className="bg-[#263126] px-5 py-24 text-center text-white sm:px-8 sm:py-32">
           <div className="mx-auto max-w-3xl">
             <p className="text-xs font-semibold uppercase tracking-[0.27em] text-[#c9c4b2]">
               Your Tuscan ride begins here
@@ -345,21 +435,52 @@ export default function Home() {
             </a>
           </div>
         </section>
+
+        <section
+          className="border-b border-[#d8d4c8] bg-[#eeece4] px-5 py-24 sm:px-8 sm:py-32 lg:px-12"
+          id="faq"
+        >
+          <div className="mx-auto grid max-w-6xl gap-12 lg:grid-cols-[0.8fr_1.5fr] lg:gap-24">
+            <h2 className="max-w-md font-serif text-4xl leading-tight tracking-[-0.025em] sm:text-6xl">
+              Frequently Asked Questions
+            </h2>
+            <div className="border-t border-[#bdb7a8]">
+              {faqs.map((faq) => (
+                <details className="group border-b border-[#bdb7a8]" key={faq.question}>
+                  <summary className="flex cursor-pointer list-none items-start justify-between gap-6 py-6 text-left font-serif text-xl leading-snug marker:content-none sm:py-7 sm:text-2xl [&::-webkit-details-marker]:hidden">
+                    <span>{faq.question}</span>
+                    <span
+                      aria-hidden="true"
+                      className="mt-1 text-2xl font-light leading-none transition-transform duration-200 group-open:rotate-45"
+                    >
+                      +
+                    </span>
+                  </summary>
+                  <p className="max-w-2xl pb-7 pr-10 leading-7 text-[#5e645a] sm:pb-8">
+                    {faq.answer}
+                  </p>
+                </details>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section
+          className="border-b border-[#d8d4c8] bg-[#f7f5ef] px-5 py-24 sm:px-8 sm:py-32 lg:px-12"
+          id="contact"
+        >
+          <div className="mx-auto grid max-w-6xl gap-12 lg:grid-cols-[0.8fr_1.5fr] lg:gap-24">
+            <div>
+              <h2 className="font-serif text-4xl leading-tight tracking-[-0.025em] sm:text-6xl">
+                Contact
+              </h2>
+            </div>
+            <ContactForm />
+          </div>
+        </section>
       </main>
 
-      <footer className="bg-[#1c241d] px-5 py-12 text-white/70 sm:px-8 lg:px-12" id="contact">
-        <div className="mx-auto flex max-w-6xl flex-col gap-10 border-t border-white/15 pt-10 sm:flex-row sm:items-end sm:justify-between">
-          <div>
-            <p className="font-serif text-xl text-white">Tuscany Horse Trekking</p>
-            <p className="mt-2 text-sm">Tuscany, Italy</p>
-          </div>
-          <nav aria-label="Footer navigation" className="flex flex-wrap gap-x-7 gap-y-3 text-xs uppercase tracking-[0.14em]">
-            <a className="transition-colors hover:text-white" href="#privacy">Privacy</a>
-            <a className="transition-colors hover:text-white" href="#terms">Terms</a>
-            <a className="transition-colors hover:text-white" href="#contact">Contact</a>
-          </nav>
-        </div>
-      </footer>
+      <SiteFooter />
     </div>
   );
 }
