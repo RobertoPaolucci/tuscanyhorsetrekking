@@ -4,9 +4,9 @@ import Link from "next/link";
 import BokunExperienceWidget from "@/components/BokunExperienceWidget";
 
 export const metadata: Metadata = {
-  title: "Horseback Riding in Tuscany | Tuscany Horse Trekking",
+  title: "Walk with Goats or Donkeys in Tuscany | Tuscany Horse Trekking",
   description:
-    "Discover horseback riding in the Tuscan countryside near Montepulciano and experience Tuscany from the saddle.",
+    "Discover the Tuscan countryside near Montepulciano on a relaxing walk accompanied by goats or donkeys.",
 };
 
 const navItems = [
@@ -17,6 +17,12 @@ const navItems = [
 ];
 
 const relatedExperiences = [
+  {
+    title: "Horseback Riding in Tuscany",
+    image: "/images/horseback-sunset-tuscany.jpg",
+    imageAlt: "A group riding horses through the Tuscan countryside at sunset",
+    href: "/experiences/horseback-riding",
+  },
   {
     title: "Farm Animal Visit, Ricotta Making & Tasting",
     image: "/images/farm-animal-visit-ricotta-making-tasting.jpg",
@@ -47,12 +53,6 @@ const relatedExperiences = [
     imageAlt: "Traditional ox cart travelling through the Tuscan countryside",
     href: "/#experiences",
   },
-  {
-    title: "Walk with Goats or Donkeys",
-    image: "/images/walk-with-goats-or-donkeys.jpg",
-    imageAlt: "Guests walking with goats through the countryside",
-    href: "/experiences/walk-with-goats-or-donkeys",
-  },
 ];
 
 function ArrowIcon() {
@@ -68,7 +68,7 @@ function ArrowIcon() {
   );
 }
 
-export default function HorsebackRidingPage() {
+export default function WalkWithGoatsOrDonkeysPage() {
   return (
     <div className="min-h-screen bg-stone-50 text-[#263126]">
       <header className="absolute inset-x-0 top-0 z-20 border-b border-white/35 bg-black/15 text-white backdrop-blur-[2px]">
@@ -132,31 +132,31 @@ export default function HorsebackRidingPage() {
 
       <main id="top">
         <section
-          aria-label="Horseback riding in the Tuscan countryside"
+          aria-label="Walking with goats or donkeys in the Tuscan countryside"
           className="relative flex min-h-[88svh] items-end overflow-hidden bg-[#596450] text-white"
         >
           <Image
-            alt="Riders on horseback among vineyards in the Tuscan countryside"
-            className="object-cover object-[58%_center] sm:object-center"
+            alt="Guests walking with goats through the Tuscan countryside"
+            className="object-cover object-center"
             fill
             priority
             sizes="100vw"
-            src="/images/hero-horseback-tuscany.jpg"
+            src="/images/walk-with-goats-or-donkeys.jpg"
           />
-          <div aria-hidden="true" className="absolute inset-0 bg-black/30" />
+          <div aria-hidden="true" className="absolute inset-0 bg-black/35" />
 
           <div className="relative mx-auto w-full max-w-[1600px] px-5 pb-16 pt-36 sm:px-8 sm:pb-20 lg:px-8 lg:pb-24">
             <p className="mb-5 text-xs font-semibold uppercase tracking-[0.28em] text-[#e4dec9]">
               Montepulciano · Tuscany
             </p>
             <h1 className="max-w-4xl font-serif text-5xl leading-[0.98] tracking-[-0.035em] sm:text-7xl lg:text-[6.2rem]">
-              Horseback Riding
+              Walk with Goats
               <br />
-              in Tuscany
+              or Donkeys
             </h1>
             <p className="mt-7 max-w-xl text-base leading-7 text-white/85 sm:text-lg sm:leading-8">
-              Discover the countryside around Montepulciano on horseback, riding through
-              the rural landscape, vineyards and trails of Tuscany.
+              Experience the Tuscan countryside at a gentle pace, walking through the
+              rural landscape in the company of goats or donkeys.
             </p>
             <a
               className="mt-9 inline-flex min-h-13 items-center justify-center gap-4 bg-[#eee9dc] px-7 text-xs font-semibold tracking-[0.18em] text-[#263126] transition-colors hover:bg-white"
@@ -168,20 +168,12 @@ export default function HorsebackRidingPage() {
         </section>
 
         <section className="px-5 py-16 sm:px-8 sm:py-20 lg:px-12 lg:py-24">
-          <div className="mx-auto grid max-w-6xl gap-7 lg:grid-cols-[0.8fr_1.5fr] lg:gap-24">
-            <p className="text-xs font-semibold uppercase tracking-[0.25em] text-[#77705e]">
-              From the saddle
+          <div className="mx-auto max-w-3xl">
+            <p className="text-lg leading-8 text-[#5e645a]">
+              Enjoy a different way to discover rural Tuscany, walking through the
+              countryside alongside friendly farm animals. A simple and authentic
+              experience surrounded by nature near Montepulciano.
             </p>
-            <div>
-              <h2 className="max-w-3xl font-serif text-3xl leading-tight tracking-[-0.025em] sm:text-5xl">
-                Horseback riding near Montepulciano
-              </h2>
-              <p className="mt-5 max-w-2xl text-lg leading-8 text-[#5e645a]">
-                Explore the Tuscan countryside on horseback along rural trails near
-                Montepulciano. Experience vineyards, rolling landscapes and the natural
-                rhythm of Tuscany from the saddle.
-              </p>
-            </div>
           </div>
         </section>
 
@@ -190,10 +182,13 @@ export default function HorsebackRidingPage() {
           id="booking"
         >
           <div className="mx-auto max-w-6xl">
+            <h2 className="mb-8 font-serif text-3xl leading-tight tracking-[-0.025em] sm:text-5xl">
+              Book your experience
+            </h2>
             <BokunExperienceWidget
               bookingChannelUUID="c70f696b-c288-45b6-8e6e-d537e0c7b108"
               className="min-h-[36rem] w-full border border-[#d8d4c8] bg-[#fbfaf6] p-3 text-left text-[#263126] shadow-[0_24px_70px_rgba(0,0,0,0.22)] sm:min-h-[40rem] sm:p-6 lg:p-8"
-              experienceId="958091"
+              experienceId="1276082"
             />
           </div>
         </section>

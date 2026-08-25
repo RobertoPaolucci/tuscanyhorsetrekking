@@ -274,7 +274,11 @@ export default function Home() {
                   <a
                     aria-label={`Discover ${experience.title}`}
                     className="mt-auto inline-flex w-fit items-center gap-3 pt-7 text-xs font-semibold uppercase tracking-[0.17em] text-[#263126]"
-                    href="#contact"
+                    href={
+                      experience.title === "Walk with Goats or Donkeys"
+                        ? "/experiences/walk-with-goats-or-donkeys"
+                        : "#contact"
+                    }
                   >
                     Discover <ArrowIcon />
                   </a>
