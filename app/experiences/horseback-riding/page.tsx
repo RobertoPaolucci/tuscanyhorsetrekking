@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import BokunExperienceWidget from "@/components/BokunExperienceWidget";
 
 export const metadata: Metadata = {
   title: "Horseback Riding in Tuscany | Tuscany Horse Trekking",
@@ -13,13 +14,6 @@ const navItems = [
   { label: "About", href: "/#about" },
   { label: "FAQ", href: "/#faq" },
   { label: "Contact", href: "/#contact" },
-];
-
-const expectations = [
-  "Ride through the Tuscan countryside",
-  "Rural trails and landscapes",
-  "A local horseback riding experience",
-  "Countryside near Montepulciano",
 ];
 
 const relatedExperiences = [
@@ -152,102 +146,34 @@ export default function HorsebackRidingPage() {
           </div>
         </section>
 
-        <section className="px-5 py-24 sm:px-8 sm:py-32 lg:px-12 lg:py-40">
-          <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-[0.8fr_1.5fr] lg:gap-24">
+        <section className="px-5 py-16 sm:px-8 sm:py-20 lg:px-12 lg:py-24">
+          <div className="mx-auto grid max-w-6xl gap-7 lg:grid-cols-[0.8fr_1.5fr] lg:gap-24">
             <p className="text-xs font-semibold uppercase tracking-[0.25em] text-[#77705e]">
               From the saddle
             </p>
             <div>
-              <h2 className="max-w-3xl font-serif text-4xl leading-tight tracking-[-0.025em] sm:text-6xl">
-                Ride through the Tuscan countryside
+              <h2 className="max-w-3xl font-serif text-3xl leading-tight tracking-[-0.025em] sm:text-5xl">
+                Horseback riding near Montepulciano
               </h2>
-              <p className="mt-8 max-w-2xl text-lg leading-8 text-[#5e645a]">
-                Horseback riding offers a distinctive way to discover the countryside
-                around Montepulciano, moving through the rural landscape at the natural
-                pace of the horse and experiencing Tuscany in close connection with the
-                land.
-              </p>
-            </div>
-          </div>
-        </section>
-
-        <section className="bg-[#eeece4] px-5 py-16 sm:px-8 sm:py-24 lg:px-12 lg:py-28">
-          <figure className="relative mx-auto aspect-[4/5] max-w-7xl overflow-hidden bg-[#b7b49f] sm:aspect-[16/10] lg:aspect-[16/9]">
-            <Image
-              alt="A group riding horses through the Tuscan countryside at sunset"
-              className="object-cover object-center"
-              fill
-              sizes="(min-width: 1280px) 80vw, (min-width: 640px) 92vw, 100vw"
-              src="/images/horseback-sunset-tuscany.jpg"
-            />
-          </figure>
-        </section>
-
-        <section className="border-b border-[#d8d4c8] bg-[#f7f5ef] px-5 py-24 sm:px-8 sm:py-32 lg:px-12">
-          <div className="mx-auto max-w-6xl">
-            <div className="grid gap-8 lg:grid-cols-[0.8fr_1.5fr] lg:gap-24">
-              <p className="text-xs font-semibold uppercase tracking-[0.25em] text-[#77705e]">
-                The experience
-              </p>
-              <h2 className="font-serif text-4xl leading-tight tracking-[-0.025em] sm:text-6xl">
-                What to expect
-              </h2>
-            </div>
-            <ul className="mt-14 grid border-t border-[#cbc6b8] sm:grid-cols-2 lg:ml-[calc(34.78%+3rem)]">
-              {expectations.map((expectation, index) => (
-                <li
-                  className={`flex min-h-32 items-start border-b border-[#cbc6b8] py-7 text-lg leading-7 sm:px-7 ${
-                    index % 2 === 0 ? "sm:border-r" : ""
-                  }`}
-                  key={expectation}
-                >
-                  <span className="mr-5 font-serif text-sm italic text-[#8a8068]">
-                    {String(index + 1).padStart(2, "0")}
-                  </span>
-                  {expectation}
-                </li>
-              ))}
-            </ul>
-          </div>
-        </section>
-
-        <section className="bg-[#eeece4] px-5 py-24 sm:px-8 sm:py-32 lg:px-12">
-          <div className="mx-auto grid max-w-6xl gap-8 lg:grid-cols-[0.8fr_1.5fr] lg:gap-24">
-            <p className="text-xs font-semibold uppercase tracking-[0.25em] text-[#77705e]">
-              Plan ahead
-            </p>
-            <div>
-              <h2 className="font-serif text-4xl leading-tight tracking-[-0.025em] sm:text-6xl">
-                Before you ride
-              </h2>
-              <p className="mt-7 max-w-2xl text-base leading-8 text-[#62675e]">
-                Practical information, requirements and booking details will be available
-                here.
+              <p className="mt-5 max-w-2xl text-lg leading-8 text-[#5e645a]">
+                Explore the Tuscan countryside on horseback along rural trails near
+                Montepulciano. Experience vineyards, rolling landscapes and the natural
+                rhythm of Tuscany from the saddle.
               </p>
             </div>
           </div>
         </section>
 
         <section
-          className="bg-[#263126] px-5 py-24 text-center text-white sm:px-8 sm:py-32"
+          className="bg-[#263126] px-4 py-10 text-white sm:px-8 sm:py-14 lg:px-12 lg:py-16"
           id="booking"
         >
-          <div className="mx-auto max-w-3xl">
-            <p className="text-xs font-semibold uppercase tracking-[0.27em] text-[#c9c4b2]">
-              Your Tuscan ride
-            </p>
-            <h2 className="mt-6 font-serif text-4xl leading-tight tracking-[-0.025em] sm:text-6xl">
-              Book your horseback ride
-            </h2>
-            <p className="mx-auto mt-6 max-w-xl leading-7 text-white/70">
-              Online booking will be available here.
-            </p>
-            <a
-              className="mt-9 inline-flex min-h-14 items-center justify-center gap-4 border border-white px-8 text-xs font-semibold tracking-[0.2em] transition-colors hover:bg-white hover:text-[#263126]"
-              href="#booking"
-            >
-              BOOK NOW <ArrowIcon />
-            </a>
+          <div className="mx-auto max-w-6xl">
+            <BokunExperienceWidget
+              bookingChannelUUID="c70f696b-c288-45b6-8e6e-d537e0c7b108"
+              className="min-h-[36rem] w-full border border-[#d8d4c8] bg-[#fbfaf6] p-3 text-left text-[#263126] shadow-[0_24px_70px_rgba(0,0,0,0.22)] sm:min-h-[40rem] sm:p-6 lg:p-8"
+              experienceId="958091"
+            />
           </div>
         </section>
 

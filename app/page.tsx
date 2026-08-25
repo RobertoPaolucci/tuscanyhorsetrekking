@@ -100,7 +100,7 @@ export default function Home() {
 
           <a
             className="hidden border border-white px-6 py-3 text-xs font-semibold tracking-[0.18em] transition-colors hover:bg-white hover:text-[#263126] lg:inline-flex"
-            href="#booking"
+            href="/experiences/horseback-riding#booking"
           >
             BOOK NOW
           </a>
@@ -124,7 +124,7 @@ export default function Home() {
               ))}
               <a
                 className="mt-2 bg-[#263126] px-4 py-3 text-center text-xs font-semibold tracking-[0.16em] text-white"
-                href="#booking"
+                href="/experiences/horseback-riding#booking"
               >
                 BOOK NOW
               </a>
@@ -164,7 +164,7 @@ export default function Home() {
             <div className="mt-9 flex flex-col gap-3 sm:flex-row">
               <a
                 className="inline-flex min-h-13 items-center justify-center gap-4 bg-[#eee9dc] px-7 text-xs font-semibold tracking-[0.18em] text-[#263126] transition-colors hover:bg-white"
-                href="#booking"
+                href="/experiences/horseback-riding#booking"
               >
                 BOOK NOW <ArrowIcon />
               </a>
@@ -313,7 +313,7 @@ export default function Home() {
               </p>
               <a
                 className="mt-9 inline-flex min-h-13 items-center justify-center gap-4 bg-[#263126] px-7 text-xs font-semibold tracking-[0.18em] text-white transition-colors hover:bg-[#3e4a3d]"
-                href="#booking"
+                href="/experiences/horseback-riding#booking"
               >
                 BOOK NOW <ArrowIcon />
               </a>
@@ -334,7 +334,7 @@ export default function Home() {
             </p>
             <a
               className="mt-9 inline-flex min-h-14 items-center justify-center gap-4 border border-white px-8 text-xs font-semibold tracking-[0.2em] transition-colors hover:bg-white hover:text-[#263126]"
-              href="#booking"
+              href="/experiences/horseback-riding#booking"
               id="booking"
             >
               BOOK YOUR RIDE <ArrowIcon />
