@@ -1,42 +1,17 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import SiteFooter from "@/components/SiteFooter";
+import SiteHeader from "@/components/SiteHeader";
 
 export const metadata: Metadata = {
   title: "Privacy Policy | Tuscany Horse Trekking",
   description: "Privacy information for users of the Tuscany Horse Trekking website.",
 };
 
-const navItems = [
-  { label: "Experiences", href: "/#experiences" },
-  { label: "Contact", href: "/#contact" },
-  { label: "Terms & Conditions", href: "/terms" },
-];
-
 export default function PrivacyPage() {
   return (
     <div className="min-h-screen bg-[#f7f5ef] text-[#263126]">
-      <header className="border-b border-[#d8d4c8] bg-[#263126] text-white">
-        <div className="mx-auto flex min-h-20 max-w-[1440px] flex-col justify-center gap-5 px-5 py-5 sm:px-8 md:flex-row md:items-center md:justify-between lg:min-h-24 lg:px-12">
-          <Link className="font-serif text-lg tracking-wide sm:text-xl" href="/">
-            Tuscany Horse Trekking
-          </Link>
-          <nav
-            aria-label="Primary navigation"
-            className="flex flex-wrap gap-x-6 gap-y-3 text-xs font-medium uppercase tracking-[0.14em] sm:gap-x-8"
-          >
-            {navItems.map((item) => (
-              <Link
-                className="transition-opacity hover:opacity-65"
-                href={item.href}
-                key={item.label}
-              >
-                {item.label}
-              </Link>
-            ))}
-          </nav>
-        </div>
-      </header>
+      <SiteHeader bookHref="/experiences/horseback-riding#booking" />
 
       <main>
         <section className="border-b border-[#d8d4c8] px-5 py-16 sm:px-8 sm:py-20 lg:px-12 lg:py-24">

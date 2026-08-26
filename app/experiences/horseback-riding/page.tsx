@@ -3,19 +3,13 @@ import Image from "next/image";
 import Link from "next/link";
 import BokunExperienceWidget from "@/components/BokunExperienceWidget";
 import SiteFooter from "@/components/SiteFooter";
+import SiteHeader from "@/components/SiteHeader";
 
 export const metadata: Metadata = {
   title: "Horseback Riding in Tuscany | Tuscany Horse Trekking",
   description:
     "Discover horseback riding in the Tuscan countryside near Montepulciano and experience Tuscany from the saddle.",
 };
-
-const navItems = [
-  { label: "Experiences", href: "/#experiences" },
-  { label: "About", href: "/#about" },
-  { label: "FAQ", href: "/#faq" },
-  { label: "Contact", href: "/#contact" },
-];
 
 const relatedExperiences = [
   {
@@ -72,64 +66,7 @@ function ArrowIcon() {
 export default function HorsebackRidingPage() {
   return (
     <div className="min-h-screen bg-stone-50 text-[#263126]">
-      <header className="absolute inset-x-0 top-0 z-20 border-b border-white/35 bg-black/15 text-white backdrop-blur-[2px]">
-        <div className="mx-auto flex h-20 max-w-[1440px] items-center justify-between px-5 sm:px-8 lg:h-24 lg:px-12">
-          <Link
-            className="max-w-40 font-serif text-lg leading-tight tracking-wide sm:max-w-none sm:text-xl"
-            href="/"
-          >
-            Tuscany Horse Trekking
-          </Link>
-
-          <nav aria-label="Primary navigation" className="hidden items-center gap-8 lg:flex">
-            {navItems.map((item) => (
-              <Link
-                className="text-xs font-medium uppercase tracking-[0.18em] transition-opacity hover:opacity-65"
-                href={item.href}
-                key={item.label}
-              >
-                {item.label}
-              </Link>
-            ))}
-          </nav>
-
-          <a
-            className="hidden border border-white px-6 py-3 text-xs font-semibold tracking-[0.18em] transition-colors hover:bg-white hover:text-[#263126] lg:inline-flex"
-            href="#booking"
-          >
-            BOOK NOW
-          </a>
-
-          <details className="mobile-menu relative lg:hidden">
-            <summary
-              aria-label="Open navigation menu"
-              className="flex size-11 cursor-pointer list-none items-center justify-center border border-white/60"
-            >
-              <span className="flex w-5 flex-col gap-1.5" aria-hidden="true">
-                <span className="h-px w-full bg-current" />
-                <span className="h-px w-full bg-current" />
-                <span className="h-px w-full bg-current" />
-              </span>
-            </summary>
-            <nav
-              aria-label="Mobile navigation"
-              className="absolute right-0 top-14 flex w-64 flex-col border border-[#d8d4c8] bg-[#f7f5ef] p-2 text-[#263126] shadow-xl"
-            >
-              {navItems.map((item) => (
-                <Link className="px-4 py-3 text-sm" href={item.href} key={item.label}>
-                  {item.label}
-                </Link>
-              ))}
-              <a
-                className="mt-2 bg-[#263126] px-4 py-3 text-center text-xs font-semibold tracking-[0.16em] text-white"
-                href="#booking"
-              >
-                BOOK NOW
-              </a>
-            </nav>
-          </details>
-        </div>
-      </header>
+      <SiteHeader bookHref="#booking" overlay />
 
       <main id="top">
         <section
