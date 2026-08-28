@@ -62,3 +62,22 @@ This block is written and re-added by `next dev` — verify at `node_modules/nex
 - Before a commit, always show the modified files.
 - Use short, descriptive commit messages.
 - Do not modify Git history.
+
+## Fine lavoro
+
+When the user writes exactly `fine lavoro`:
+
+1. Run `git status`.
+2. Review `git diff`.
+3. Include only changes relevant to the current work.
+4. Run targeted linting on the modified files, when applicable.
+5. Always run `npm run build`.
+6. If the build or TypeScript fails because of the current changes, fix the issue and retry.
+7. If the build does not pass, stop without committing or pushing.
+8. If all checks pass, run `git add` only for the relevant files.
+9. Create a short, descriptive commit message.
+10. Run `git commit`.
+11. Run `git push`.
+12. Finish with a brief summary covering the modified files, checks performed, build result, commit, and push.
+
+The exact phrase `fine lavoro` is explicit authorization to run `git add`, `git commit`, and `git push` for the relevant changes.
