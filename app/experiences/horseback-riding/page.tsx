@@ -5,10 +5,35 @@ import BokunExperienceWidget from "@/components/BokunExperienceWidget";
 import SiteFooter from "@/components/SiteFooter";
 import SiteHeader from "@/components/SiteHeader";
 
+const title = "Horseback Riding in Tuscany | Tuscany Horse Trekking";
+const description =
+  "Discover horseback riding in the Tuscan countryside near Montepulciano and experience Tuscany from the saddle.";
+
 export const metadata: Metadata = {
-  title: "Horseback Riding in Tuscany | Tuscany Horse Trekking",
-  description:
-    "Discover horseback riding in the Tuscan countryside near Montepulciano and experience Tuscany from the saddle.",
+  title,
+  description,
+  alternates: {
+    canonical: "/experiences/horseback-riding",
+  },
+  openGraph: {
+    title,
+    description,
+    url: "/experiences/horseback-riding",
+    siteName: "Tuscany Horse Trekking",
+    type: "website",
+    images: [
+      {
+        url: "/images/hero-horseback-tuscany.jpg",
+        alt: "Riders on horseback among vineyards in the Tuscan countryside",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title,
+    description,
+    images: ["/images/hero-horseback-tuscany.jpg"],
+  },
 };
 
 const relatedExperiences = [

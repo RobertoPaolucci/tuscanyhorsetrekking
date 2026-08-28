@@ -5,10 +5,35 @@ import BokunExperienceWidget from "@/components/BokunExperienceWidget";
 import SiteFooter from "@/components/SiteFooter";
 import SiteHeader from "@/components/SiteHeader";
 
+const title = "Walk with Goats or Donkeys in Tuscany | Tuscany Horse Trekking";
+const description =
+  "Discover the Tuscan countryside near Montepulciano on a relaxing walk accompanied by goats or donkeys.";
+
 export const metadata: Metadata = {
-  title: "Walk with Goats or Donkeys in Tuscany | Tuscany Horse Trekking",
-  description:
-    "Discover the Tuscan countryside near Montepulciano on a relaxing walk accompanied by goats or donkeys.",
+  title,
+  description,
+  alternates: {
+    canonical: "/experiences/walk-with-goats-or-donkeys",
+  },
+  openGraph: {
+    title,
+    description,
+    url: "/experiences/walk-with-goats-or-donkeys",
+    siteName: "Tuscany Horse Trekking",
+    type: "website",
+    images: [
+      {
+        url: "/images/walk-with-goats-or-donkeys.jpg",
+        alt: "Guests walking with goats through the Tuscan countryside",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title,
+    description,
+    images: ["/images/walk-with-goats-or-donkeys.jpg"],
+  },
 };
 
 const relatedExperiences = [

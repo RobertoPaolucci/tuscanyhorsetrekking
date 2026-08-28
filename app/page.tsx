@@ -1,8 +1,40 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import ContactForm from "@/components/ContactForm";
 import SiteFooter from "@/components/SiteFooter";
 import SiteHeader from "@/components/SiteHeader";
+
+const title = "Tuscany Horse Trekking | Horseback Riding in Tuscany";
+const description =
+  "Authentic horseback riding experiences in the Tuscan countryside near Montepulciano.";
+
+export const metadata: Metadata = {
+  title,
+  description,
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    title,
+    description,
+    url: "/",
+    siteName: "Tuscany Horse Trekking",
+    type: "website",
+    images: [
+      {
+        url: "/images/hero-horseback-tuscany.jpg",
+        alt: "Riders on horseback among vineyards in the Tuscan countryside",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title,
+    description,
+    images: ["/images/hero-horseback-tuscany.jpg"],
+  },
+};
 
 const experiences = [
   {

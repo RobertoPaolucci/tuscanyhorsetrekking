@@ -3,6 +3,7 @@ import BackToTop from "@/components/BackToTop";
 import "./globals.css";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://tuscanyhorsetrekking.it"),
   title: "Tuscany Horse Trekking | Horseback Riding in Tuscany",
   description:
     "Authentic horseback riding experiences in the Tuscan countryside near Montepulciano.",
