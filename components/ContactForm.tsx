@@ -1,6 +1,6 @@
 "use client";
 
-import { FormEvent, useState } from "react";
+import { FormEvent, useEffect, useRef, useState } from "react";
 
 const experiences = [
   "Horseback Riding in Tuscany",
@@ -22,6 +22,21 @@ const fieldClassName =
 export default function ContactForm() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [status, setStatus] = useState<SubmissionStatus>({ type: "idle", message: "" });
+  const experienceSelectRef = useRef<HTMLSelectElement>(null);
+
+  useEffect(() => {
+    const requestedExperience = new URLSearchParams(window.location.search).get(
+      "experience",
+    );
+
+    if (
+      experienceSelectRef.current &&
+      requestedExperience &&
+      experiences.includes(requestedExperience)
+    ) {
+      experienceSelectRef.current.value = requestedExperience;
+    }
+  }, []);
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -115,6 +130,7 @@ export default function ContactForm() {
             defaultValue=""
             id="contact-experience"
             name="experience"
+            ref={experienceSelectRef}
             required
           >
             <option disabled value="">
