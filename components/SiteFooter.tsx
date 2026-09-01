@@ -1,4 +1,5 @@
 import Link from "next/link";
+import CookieSettingsButton from "@/components/CookieSettingsButton";
 
 const footerLinks = [
   { label: "Experiences", href: "/#experiences" },
@@ -32,6 +33,7 @@ export default function SiteFooter() {
               {item.label}
             </Link>
           ))}
+          <CookieSettingsButton />
         </nav>
       </div>
     </footer>
