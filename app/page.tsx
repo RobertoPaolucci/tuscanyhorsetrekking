@@ -49,6 +49,15 @@ const experiences = [
   },
   {
     number: "02",
+    title: "Walk with Goats or Donkeys",
+    description: "Walk through the rural surroundings in the company of farm animals.",
+    image: "/images/walk-with-goats-or-donkeys.jpg",
+    imageAlt: "Guests walking with goats through the countryside",
+    bookingType: "instant" as const,
+    bookingHref: "/experiences/walk-with-goats-or-donkeys#booking",
+  },
+  {
+    number: "03",
     title: "Farm Animal Visit, Ricotta Making & Tasting",
     description: "Meet the farm animals and discover a traditional part of rural life.",
     image: "/images/farm-animal-visit-ricotta-making-tasting.jpg",
@@ -56,7 +65,7 @@ const experiences = [
     bookingType: "request" as const,
   },
   {
-    number: "03",
+    number: "04",
     title: "Pici Cooking Class & Dinner",
     description: "Prepare a Tuscan pasta tradition and share dinner at our farm.",
     image: "/images/pici-cooking-class-dinner.jpg",
@@ -64,7 +73,7 @@ const experiences = [
     bookingType: "request" as const,
   },
   {
-    number: "04",
+    number: "05",
     title: "Farm Visit & First Saddle Experience",
     description: "An introduction to the farm and a first experience in the saddle.",
     image: "/images/farm-visit-first-saddle-experience.jpg",
@@ -72,7 +81,7 @@ const experiences = [
     bookingType: "request" as const,
   },
   {
-    number: "05",
+    number: "06",
     title: "Horse-Drawn Carriage Ride in Montepulciano",
     description: "See Montepulciano from the considered pace of a horse-drawn carriage.",
     image: "/images/horse-drawn-carriage-ride-montepulciano.jpg",
@@ -80,21 +89,12 @@ const experiences = [
     bookingType: "request" as const,
   },
   {
-    number: "06",
+    number: "07",
     title: "Traditional Ox Cart Ride",
     description: "Encounter the countryside through a traditional form of rural travel.",
     image: "/images/traditional-ox-cart-ride.jpg",
     imageAlt: "Traditional ox cart travelling through the Tuscan countryside",
     bookingType: "request" as const,
-  },
-  {
-    number: "07",
-    title: "Walk with Goats or Donkeys",
-    description: "Walk through the rural surroundings in the company of farm animals.",
-    image: "/images/walk-with-goats-or-donkeys.jpg",
-    imageAlt: "Guests walking with goats through the countryside",
-    bookingType: "instant" as const,
-    bookingHref: "/experiences/walk-with-goats-or-donkeys#booking",
   },
 ];
 
