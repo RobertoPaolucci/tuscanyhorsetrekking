@@ -5,9 +5,9 @@ import BokunExperienceWidget from "@/components/BokunExperienceWidget";
 import SiteFooter from "@/components/SiteFooter";
 import SiteHeader from "@/components/SiteHeader";
 
-const title = "Horseback Riding in Tuscany | Tuscany Horse Trekking";
+const title = "Horseback Riding in Montepulciano, Tuscany | Tuscany Horse Trekking";
 const description =
-  "Discover horseback riding in the Tuscan countryside near Montepulciano and experience Tuscany from the saddle.";
+  "Experience horseback riding in Montepulciano, Tuscany. Discover vineyards, rural trails and rolling hills in the Tuscan countryside with Tuscany Horse Trekking.";
 
 export const metadata: Metadata = {
   title,
@@ -115,11 +115,11 @@ export default function HorsebackRidingPage() {
             <h1 className="max-w-4xl font-serif text-5xl leading-[0.98] tracking-[-0.035em] sm:text-7xl lg:text-[6.2rem]">
               Horseback Riding
               <br />
-              in Tuscany
+              in Montepulciano, Tuscany
             </h1>
             <p className="mt-7 max-w-xl text-base leading-7 text-white/85 sm:text-lg sm:leading-8">
-              Discover the countryside around Montepulciano on horseback, riding through
-              the rural landscape, vineyards and trails of Tuscany.
+              Experience horseback riding in Montepulciano and explore the countryside
+              of Tuscany, surrounded by vineyards, rural trails and rolling hills.
             </p>
             <a
               className="mt-9 inline-flex min-h-13 items-center justify-center gap-4 bg-[#eee9dc] px-7 text-xs font-semibold tracking-[0.18em] text-[#263126] transition-colors hover:bg-white"

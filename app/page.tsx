@@ -39,7 +39,7 @@ export const metadata: Metadata = {
 const experiences = [
   {
     number: "01",
-    title: "Horseback Riding in Tuscany",
+    title: "Horseback Riding in Montepulciano",
     description:
       "Discover the Tuscan countryside from the saddle, surrounded by the landscape near Montepulciano.",
     image: "/images/horseback-sunset-tuscany.jpg",
@@ -274,7 +274,7 @@ export default function Home() {
 
             <article className="grid gap-8 border-b border-[#cbc6b8] py-12 sm:py-16 lg:grid-cols-[1.2fr_0.8fr] lg:gap-16">
               <Link
-                aria-label="Discover Horseback Riding in Tuscany"
+                aria-label="Discover Horseback Riding in Montepulciano"
                 href="/experiences/horseback-riding"
               >
                 <figure className="relative aspect-[4/5] overflow-hidden bg-[#b7b49f] sm:aspect-[16/10] lg:aspect-[4/3]">
@@ -295,7 +295,9 @@ export default function Home() {
                   Online booking
                 </span>
                 <h3 className="mt-6 max-w-lg font-serif text-4xl leading-[1.08] tracking-[-0.02em] sm:text-5xl">
-                  {experiences[0].title}
+                  <Link href="/experiences/horseback-riding">
+                    {experiences[0].title}
+                  </Link>
                 </h3>
                 <p className="mt-5 max-w-md text-base leading-8 text-[#62675e]">
                   {experiences[0].description}
