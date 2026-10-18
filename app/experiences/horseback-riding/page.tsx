@@ -52,6 +52,11 @@ const faqs = [
     answer:
       "The ride takes place in the Tuscan countryside near Montepulciano. The exact meeting point and practical directions are provided with your booking confirmation.",
   },
+  {
+    question: "Is parking available?",
+    answer:
+      "Yes. Free parking is available close to the meeting point. The exact meeting point and practical directions are provided with your booking confirmation.",
+  },
 ];
 
 const relatedExperiences = [
