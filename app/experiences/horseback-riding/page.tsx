@@ -36,6 +36,24 @@ export const metadata: Metadata = {
   },
 };
 
+const faqs = [
+  {
+    question: "Do I need previous horse riding experience?",
+    answer:
+      "No specific level of riding experience is required in advance. Before the ride, the guide assesses each participant’s ability, confidence and control, assigns a suitable horse and position within the group, and decides whether the rider can ride independently or should be accompanied by a guide leading the horse by hand. The guide’s safety instructions must be followed throughout the experience.",
+  },
+  {
+    question: "Can experienced riders ride faster?",
+    answer:
+      "The guide decides the pace according to the participants’ abilities, the horses, trail conditions and safety considerations. Previous riding experience does not guarantee a faster pace or independent riding.",
+  },
+  {
+    question: "Where does the ride take place?",
+    answer:
+      "The ride takes place in the Tuscan countryside near Montepulciano. The exact meeting point and practical directions are provided with your booking confirmation.",
+  },
+];
+
 const relatedExperiences = [
   {
     title: "Farm Animal Visit, Ricotta Making & Tasting",
@@ -140,9 +158,16 @@ export default function HorsebackRidingPage() {
                 Horseback riding near Montepulciano
               </h2>
               <p className="mt-5 max-w-2xl text-lg leading-8 text-[#5e645a]">
-                Explore the Tuscan countryside on horseback along rural trails near
-                Montepulciano. Experience vineyards, rolling landscapes and the natural
-                rhythm of Tuscany from the saddle.
+                Explore rural trails near Montepulciano, surrounded by vineyards and
+                the rolling hills of the Tuscan countryside.
+              </p>
+              <p className="mt-5 max-w-2xl text-lg leading-8 text-[#5e645a]">
+                Before the ride, the guide assesses each participant’s riding ability,
+                confidence and control, then assigns a suitable horse and position
+                within the group. The guide also decides whether the participant can
+                ride independently or should be accompanied by a guide leading the
+                horse by hand. The pace is adapted to the riders, horses, trail
+                conditions and safety considerations.
               </p>
             </div>
           </div>
@@ -158,6 +183,35 @@ export default function HorsebackRidingPage() {
               className="min-h-[36rem] w-full border border-[#d8d4c8] bg-[#fbfaf6] p-3 text-left text-[#263126] shadow-[0_24px_70px_rgba(0,0,0,0.22)] sm:min-h-[40rem] sm:p-6 lg:p-8"
               experienceId="958091"
             />
+          </div>
+        </section>
+
+        <section
+          className="border-b border-[#d8d4c8] bg-[#eeece4] px-5 py-24 sm:px-8 sm:py-32 lg:px-12"
+          id="faq"
+        >
+          <div className="mx-auto grid max-w-6xl gap-12 lg:grid-cols-[0.8fr_1.5fr] lg:gap-24">
+            <h2 className="max-w-md font-serif text-4xl leading-tight tracking-[-0.025em] sm:text-6xl">
+              Before your horse riding experience
+            </h2>
+            <div className="border-t border-[#bdb7a8]">
+              {faqs.map((faq) => (
+                <details className="group border-b border-[#bdb7a8]" key={faq.question}>
+                  <summary className="flex cursor-pointer list-none items-start justify-between gap-6 py-6 text-left font-serif text-xl leading-snug marker:content-none sm:py-7 sm:text-2xl [&::-webkit-details-marker]:hidden">
+                    <span>{faq.question}</span>
+                    <span
+                      aria-hidden="true"
+                      className="mt-1 text-2xl font-light leading-none transition-transform duration-200 group-open:rotate-45"
+                    >
+                      +
+                    </span>
+                  </summary>
+                  <p className="max-w-2xl pb-7 pr-10 leading-7 text-[#5e645a] sm:pb-8">
+                    {faq.answer}
+                  </p>
+                </details>
+              ))}
+            </div>
           </div>
         </section>
 
